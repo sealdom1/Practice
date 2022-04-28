@@ -1,1 +1,45 @@
+//a
+public static int[] getColumn(int[][] arr2D, int c) {
+  int[] newArr = new int[arr2D.length];
+  for(int i = 0; i < arr2D[].length; i++){
+    newArr[i] = arr2D[i][c];
+  }
+  return newArr;
+}
 
+//b
+public static boolean isLatin(int[][] square){
+  for(int i = 0; i < square.length - 1; i++){
+    int[] colArr1 = ArrayTester.getColumn(square[][], i);
+    int[] colArr2 = ArrayTester.getColumn(square[][], i+1);
+    
+    if(ArrayTester.containsDuplicates(colArr1) == true || ArrayTester.containsDuplicates(colArr2) == true){
+      return false;
+    }
+    
+    if(ArrayTester.hasAllValues(colArr1, colArr2) != true){
+      return false;
+    }
+  }
+  for(int i = 0; i < square.length - 1; i++){
+    int[] rowArr1 = square[i];
+    int[] rowArr2 = square[i+1];
+    
+    if(ArrayTester.containsDuplicates(rowArr1) == true || ArrayTester.containsDuplicates(rowArr2) == true){
+      return false;
+    }
+    if(ArrayTester.hasAllValues(colArr1, colArr2) != true){
+      return false;
+    }
+  }
+  for(int i = 0; i < square.length - 1; i++){
+    int[] rowArr = square[0];
+    int[] colArr = square[i];
+    
+    if(ArrayTester.hasAllValues(rowArr, colArr) != true;){
+      return false;
+    }
+  }
+  
+  return true;
+}
